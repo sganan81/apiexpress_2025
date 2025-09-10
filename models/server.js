@@ -9,8 +9,7 @@ class Server {
     this.rutas()
   }
 
-  middleware () {
-    // Importante: 
+  middleware () {    
     this.app.use(cors())
     this.app.use(express.static('public'))
   }
