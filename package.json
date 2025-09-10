@@ -8,7 +8,8 @@
     "start": "node index",
     "dev": "nodemon index",
     "lint": "npx standard",
-    "lint:fix": "npx standard --fix"
+    "lint:fix": "npx standard --fix",
+    "prepare": "husky"
   },
   "author": "Sebastian Gañan",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "standard": "^17.1.2"
   },
   "eslintConfig": {

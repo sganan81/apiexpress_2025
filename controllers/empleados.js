@@ -1,13 +1,13 @@
 const axios = require('axios')
 const { request, response } = require('express')
-const URL = process.env.URL_API;
+const URL = process.env.URL_API
 
 const getEmpleados = (req = request, res = response) => {
   const { filter } = req.query
 
   const filtro = (filter) ? `?filter=${filter}` : ''
-  
-  console.log(`${URL}/api/v1/empleados${filtro}`);
+
+  console.log(`${URL}/api/v1/empleados${filtro}`)
 
   axios.get(`${URL}/api/v1/empleados${filtro}`)
     .then((response) => {
