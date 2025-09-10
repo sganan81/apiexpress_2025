@@ -4,11 +4,17 @@ class Server {
   constructor () {
     this.app = express()
     this.port = process.env.PORT || 3000
+    this.middleware()
     this.rutas()
   }
 
+  middleware () {
+    // Importante: 
+    this.app.use(express.static('public'))
+  }
+
   rutas () {
-    /* this.app.get('/', (req, res) => res.send('Hello World!')) */
+    this.app.get('/', (req, res) => res.send('Hello World!'))
     this.app.use('/api/v1/empleados', require('../routes/empleados'))
   }
 
