@@ -1,12 +1,13 @@
 const axios = require('axios')
 const { request, response } = require('express')
+const URL = process.env.URL_API;
 
 const getEmpleados = (req = request, res = response) => {
   const { filter } = req.query
 
   const filtro = (filter) ? `?filter=${filter}` : ''
 
-  axios.get(`https://66c78f59732bf1b79fa6e8c7.mockapi.io/api/v1/empleados${filtro}`)
+  axios.get(`${URL}/api/v1/empleados${filtro}`)
     .then((response) => {
       const { data = [] } = response
 
@@ -26,7 +27,7 @@ const getEmpleados = (req = request, res = response) => {
 
 const getEmpleado = (req = request, res = response) => {
   const { id } = req.params
-  axios.get(`https://66c78f59732bf1b79fa6e8c7.mockapi.io/api/v1/empleados/${id}`)
+  axios.get(`${URL}/api/v1/empleados/${id}`)
     .then((response) => {
       const { data = [] } = response
 
