@@ -18,6 +18,7 @@ class Server {
     this.app.get('/', (req, res) => res.send('Hello World!'))
     this.app.use('/api/v1/empleados', require('../routes/empleados'))
     this.app.use('/api/v1/companias', require('../routes/companias'))
+    this.app.use('/api/v1/productos', require('../routes/productos'))
   }
 
   listen () {
