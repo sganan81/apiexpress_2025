@@ -9,7 +9,7 @@ const getEmpleados = (req = request, res = response) => {
 
   console.log(`${URL}/api/v1/empleados${filtro}`)
 
-  axios.get(`${URL}/api/v1/empleados${filtro}`)
+  axios.get(`${URL}/api/v2/empleados${filtro}`)
     .then((response) => {
       const { data = [] } = response
 
